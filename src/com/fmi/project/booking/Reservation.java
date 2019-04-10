@@ -15,11 +15,6 @@ public class Reservation extends Booking {
         this.upsellPackage = upsellPackage;
     }
 
-    public Reservation(int noSeats, boolean upsellPackage) {
-        this.noSeats = noSeats;
-        this.upsellPackage = upsellPackage;
-    }
-
     public Reservation() {
     }
 

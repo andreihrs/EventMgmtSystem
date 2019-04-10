@@ -5,10 +5,11 @@ public class LocateSeat extends Location{
     private int seatID;
     private boolean multipleSeats;
 
-    public LocateSeat(boolean isFull, int noOfPlacesAvailable, String placeName, String meansOfBooking, boolean acceptsBooking, String city, int seatID, boolean multipleSeats) {
-        super(isFull, noOfPlacesAvailable, placeName, meansOfBooking, acceptsBooking, city);
+    public LocateSeat(boolean isFull,String placeName, String meansOfBooking, boolean acceptsBooking, String city, int seatID, boolean multipleSeats) {
+        super(isFull, placeName, meansOfBooking, acceptsBooking, city);
         this.seatID = seatID;
         this.multipleSeats = multipleSeats;
+        noOfPlacesAvailable -= 1;
     }
 
     public LocateSeat() {

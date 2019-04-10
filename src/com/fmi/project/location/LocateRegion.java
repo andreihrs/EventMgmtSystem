@@ -4,9 +4,10 @@ public class LocateRegion extends Location {
 
     private String venueRegion;
 
-    public LocateRegion(boolean isFull, int noOfPlacesAvailable, String placeName, String meansOfBooking, boolean acceptsBooking, String city, String venueRegion) {
-        super(isFull, noOfPlacesAvailable, placeName, meansOfBooking, acceptsBooking, city);
+    public LocateRegion(boolean isFull, String placeName, String meansOfBooking, boolean acceptsBooking, String city, String venueRegion) {
+        super(isFull, placeName, meansOfBooking, acceptsBooking, city);
         this.venueRegion = venueRegion;
+        noOfPlacesAvailable -= 1;
     }
 
     public LocateRegion() {
