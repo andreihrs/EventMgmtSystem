@@ -8,7 +8,7 @@ public class Group extends Client{
     private boolean specialEvent;
     private boolean elligibleForReward;
 
-    public Group(boolean hasRegistered, boolean hasArrived, Booking[] booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noPeople, boolean specialEvent, boolean elligibleForReward) {
+    public Group(boolean hasRegistered, boolean hasArrived, Booking booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noPeople, boolean specialEvent, boolean elligibleForReward) {
         super(hasRegistered, hasArrived, booking, pricePaid, firstTimeCustomer, emailListSubscription);
         this.noPeople = noPeople;
         this.specialEvent = specialEvent;

@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(Service.getInstance().howManyAgenciesWork());
-        System.out.println(Service.getInstance().howManyBookinsWithFriendsInvited());
+        System.out.println(Service.getInstance().howManyBookingsWithFriendsInvited());
         System.out.println(Service.getInstance().howManyFreeEvents());
         System.out.println(Service.getInstance().howManyRewardsClaimed());
         System.out.println(Service.getInstance().isThereAnyEventAtLaCosta());

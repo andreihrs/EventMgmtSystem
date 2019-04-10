@@ -8,7 +8,7 @@ public class Individual extends Client{
     private int couponsUsed;
     private int rewardsClaimed;
 
-    public Individual(boolean hasRegistered, boolean hasArrived, Booking[] booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int previousCheckins, int couponsUsed, int rewardsClaimed) {
+    public Individual(boolean hasRegistered, boolean hasArrived, Booking booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int previousCheckins, int couponsUsed, int rewardsClaimed) {
         super(hasRegistered, hasArrived, booking, pricePaid, firstTimeCustomer, emailListSubscription);
         this.previousCheckins = previousCheckins;
         this.couponsUsed = couponsUsed;

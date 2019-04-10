@@ -9,7 +9,7 @@ public class Agency extends Client {
     private int discount;
     private String companyName;
 
-    public Agency(boolean hasRegistered, boolean hasArrived, Booking[] booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noOfBookings, boolean pastCommission, int discount, String companyName) {
+    public Agency(boolean hasRegistered, boolean hasArrived, Booking booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noOfBookings, boolean pastCommission, int discount, String companyName) {
         super(hasRegistered, hasArrived, booking, pricePaid, firstTimeCustomer, emailListSubscription);
         this.noOfBookings = noOfBookings;
         this.pastCommission = pastCommission;

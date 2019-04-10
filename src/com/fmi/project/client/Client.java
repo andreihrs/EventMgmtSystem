@@ -6,12 +6,12 @@ public abstract class Client implements Comparable<Client> {
 
     protected boolean hasRegistered;
     protected boolean hasArrived;
-    protected Booking[] booking;
+    protected Booking booking;
     protected int pricePaid;
     protected boolean firstTimeCustomer;
     protected String EmailListSubscription;
 
-    public Client(boolean hasRegistered, boolean hasArrived, Booking[] booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription) {
+    public Client(boolean hasRegistered, boolean hasArrived, Booking booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription) {
         this.hasRegistered = hasRegistered;
         this.hasArrived = hasArrived;
         this.booking = booking;
@@ -39,11 +39,11 @@ public abstract class Client implements Comparable<Client> {
         this.hasArrived = hasArrived;
     }
 
-    public Booking[] getBooking() {
+    public Booking getBooking() {
         return booking;
     }
 
-    public void setBooking(Booking[] booking) {
+    public void setBooking(Booking booking) {
         this.booking = booking;
     }
 
