@@ -1,20 +1,18 @@
 package com.fmi.project.client;
 
-import com.fmi.project.booking.*;
+// TO-DO: import com.fmi.project.booking.*;
 
 public abstract class Client implements Comparable<Client> {
 
     protected boolean hasRegistered;
     protected boolean hasArrived;
-    protected Booking booking;
     protected int pricePaid;
     protected boolean firstTimeCustomer;
     protected String EmailListSubscription;
 
-    public Client(boolean hasRegistered, boolean hasArrived, Booking booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription) {
+    public Client(boolean hasRegistered, boolean hasArrived, int pricePaid, boolean firstTimeCustomer, String emailListSubscription) {
         this.hasRegistered = hasRegistered;
         this.hasArrived = hasArrived;
-        this.booking = booking;
         this.pricePaid = pricePaid;
         this.firstTimeCustomer = firstTimeCustomer;
         EmailListSubscription = emailListSubscription;
@@ -37,14 +35,6 @@ public abstract class Client implements Comparable<Client> {
 
     public void setHasArrived(boolean hasArrived) {
         this.hasArrived = hasArrived;
-    }
-
-    public Booking getBooking() {
-        return booking;
-    }
-
-    public void setBooking(Booking booking) {
-        this.booking = booking;
     }
 
     public int getPricePaid() {

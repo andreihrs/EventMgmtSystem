@@ -1,7 +1,5 @@
 package com.fmi.project.client;
 
-import com.fmi.project.booking.Booking;
-
 public class Agency extends Client {
 
     private int noOfBookings;
@@ -9,8 +7,8 @@ public class Agency extends Client {
     private int discount;
     private String companyName;
 
-    public Agency(boolean hasRegistered, boolean hasArrived, Booking booking, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noOfBookings, boolean pastCommission, int discount, String companyName) {
-        super(hasRegistered, hasArrived, booking, pricePaid, firstTimeCustomer, emailListSubscription);
+    public Agency(boolean hasRegistered, boolean hasArrived, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noOfBookings, boolean pastCommission, int discount, String companyName) {
+        super(hasRegistered, hasArrived, pricePaid, firstTimeCustomer, emailListSubscription);
         this.noOfBookings = noOfBookings;
         this.pastCommission = pastCommission;
         this.discount = discount;
