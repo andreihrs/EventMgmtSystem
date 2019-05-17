@@ -5,8 +5,11 @@ import com.fmi.project.event.*;
 import com.fmi.project.location.*;
 import com.fmi.project.booking.*;
 
-import java.sql.Timestamp;
+import javax.xml.transform.Result;
+import java.sql.*;
 import java.util.*;
+import java.util.Date;
+
 
 public class Service {
 
@@ -19,6 +22,35 @@ public class Service {
     private static final Service instance = new Service();
 
     private Service() {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proiectpao?serverTimezone=UTC", "root", "234112");
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from users");
+
+            ResultSetMetaData resultSetMetaData = (ResultSetMetaData) resultSet.getMetaData();
+
+
+
+            while (resultSet.next()) {
+                System.out.println("id=" + resultSet.getInt(1) + " , username" + resultSet.getString(2));
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
         locations[0] = new LocateSeat(false, "La Costa", "Online", true, "Bucharest", 10, true);
         locations[1] = new LocateRegion(false, "Crazy Beach", "Online", true, "Constanta", "backstage");
         events[0] = new PublicEvent(locations[0], new Date(), new Date(2019, 4, 15), false, "New Year's Eve", "La Costa Restaurant", "Kony Band", "300 lei - 1 seara");

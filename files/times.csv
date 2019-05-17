@@ -8,3 +8,13 @@ doesAnyEventAcceptOnlineBooking,2019-05-13 00:31:36.176
 totalPricePaid,2019-05-13 00:31:36.185
 printClientsSortedBySumPaid,2019-05-13 00:31:36.196
 printEventsSortedByStartDate,2019-05-13 00:31:36.208
+howManyAgenciesWork,2019-05-17 16:39:26.831
+howManyBookingsWithFriendsInvited,2019-05-17 16:39:26.947
+howManyFreeEvents,2019-05-17 16:39:26.985
+howManyRewardsClaimed,2019-05-17 16:39:27.013
+isThereAnyEventAtLaCosta,2019-05-17 16:39:27.038
+latestEventFinish,2019-05-17 16:39:27.068
+doesAnyEventAcceptOnlineBooking,2019-05-17 16:39:27.193
+totalPricePaid,2019-05-17 16:39:27.221
+printClientsSortedBySumPaid,2019-05-17 16:39:27.258
+printEventsSortedByStartDate,2019-05-17 16:39:27.327

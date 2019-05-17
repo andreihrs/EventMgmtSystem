@@ -65,4 +65,13 @@ public abstract class Client implements Comparable<Client> {
     public int compareTo(Client cl) {
        return Integer.compare(this.pricePaid, cl.pricePaid);
     }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "nameOfEmailList=" + EmailListSubscription  +
+                ", pricePaid='" + pricePaid + '\'' +
+                ", firstTimeCustomer: '" + firstTimeCustomer + '\'' +
+                '}';
+    }
 }
