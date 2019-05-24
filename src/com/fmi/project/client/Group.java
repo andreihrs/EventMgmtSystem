@@ -4,19 +4,16 @@ package com.fmi.project.client;
 public class Group extends Client{
 
     private int noPeople;
-    private boolean specialEvent;
     private boolean elligibleForReward;
 
-    public Group(boolean hasRegistered, boolean hasArrived, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noPeople, boolean specialEvent, boolean elligibleForReward) {
-        super(hasRegistered, hasArrived, pricePaid, firstTimeCustomer, emailListSubscription);
+    public Group(int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noPeople, boolean elligibleForReward) {
+        super(pricePaid, firstTimeCustomer, emailListSubscription);
         this.noPeople = noPeople;
-        this.specialEvent = specialEvent;
         this.elligibleForReward = elligibleForReward;
     }
 
     public Group(int noPeople, boolean specialEvent, boolean elligibleForReward) {
         this.noPeople = noPeople;
-        this.specialEvent = specialEvent;
         this.elligibleForReward = elligibleForReward;
     }
 
@@ -29,14 +26,6 @@ public class Group extends Client{
 
     public void setNoPeople(int noPeople) {
         this.noPeople = noPeople;
-    }
-
-    public boolean isSpecialEvent() {
-        return specialEvent;
-    }
-
-    public void setSpecialEvent(boolean specialEvent) {
-        this.specialEvent = specialEvent;
     }
 
     public boolean isElligibleForReward() {

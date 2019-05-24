@@ -8,8 +8,8 @@ public class Individual extends Client{
     private int couponsUsed;
     private int rewardsClaimed;
 
-    public Individual(boolean hasRegistered, boolean hasArrived, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int previousCheckins, int couponsUsed, int rewardsClaimed) {
-        super(hasRegistered, hasArrived, pricePaid, firstTimeCustomer, emailListSubscription);
+    public Individual(int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int previousCheckins, int couponsUsed, int rewardsClaimed) {
+        super(pricePaid, firstTimeCustomer, emailListSubscription);
         this.previousCheckins = previousCheckins;
         this.couponsUsed = couponsUsed;
         this.rewardsClaimed = rewardsClaimed;

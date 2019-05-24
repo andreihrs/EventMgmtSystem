@@ -3,21 +3,18 @@ package com.fmi.project.client;
 public class Agency extends Client {
 
     private int noOfBookings;
-    private boolean pastCommission;
     private int discount;
     private String companyName;
 
-    public Agency(boolean hasRegistered, boolean hasArrived, int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noOfBookings, boolean pastCommission, int discount, String companyName) {
-        super(hasRegistered, hasArrived, pricePaid, firstTimeCustomer, emailListSubscription);
+    public Agency(int pricePaid, boolean firstTimeCustomer, String emailListSubscription, int noOfBookings, int discount, String companyName) {
+        super(pricePaid, firstTimeCustomer, emailListSubscription);
         this.noOfBookings = noOfBookings;
-        this.pastCommission = pastCommission;
         this.discount = discount;
         this.companyName = companyName;
     }
 
     public Agency(int noOfBookings, boolean pastCommission, int discount, String companyName) {
         this.noOfBookings = noOfBookings;
-        this.pastCommission = pastCommission;
         this.discount = discount;
         this.companyName = companyName;
     }
@@ -31,14 +28,6 @@ public class Agency extends Client {
 
     public void setNoOfBookings(int noOfBookings) {
         this.noOfBookings = noOfBookings;
-    }
-
-    public boolean isPastCommission() {
-        return pastCommission;
-    }
-
-    public void setPastCommission(boolean pastCommission) {
-        this.pastCommission = pastCommission;
     }
 
     public int getDiscount() {

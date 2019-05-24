@@ -60,10 +60,10 @@ public class Service {
         bookings[1] = new Ticket(250, events[2], true, new Date(2019, 6, 30), new Date(), true, false, true, true, 300, "No");
         bookings[2] = new FestivalPass(450, events[1], true, new Date(2019, 7, 2), new Date(), true, false, true, true, 300, "Yes", 3, "nr1", false);
         bookings[3] = new Reservation(145, events[0], false, new Date(2019, 6, 31), new Date(), false, true, 10, true);
-        clients[0] = new Individual(true, false, 110, true, "1st Time Customers", 0, 0, 1);
-        clients[1] = new Group(true, true, 1750, true, "Group attendes", 7, true, true);
-        clients[2] = new Agency(true, false, 900, false, "Partners", 34, true, 15, "Fractalize");
-        clients[3] = new Individual(true, true, 145, false, "Vegan Customers", 5, 2, 1);
+        clients[0] = new Individual(110, true, "1st Time Customers", 0, 0, 1);
+        clients[1] = new Group(1750, true, "Group attendes", 7, true);
+        clients[2] = new Agency(900, false, "Partners", 34, 15, "Fractalize");
+        clients[3] = new Individual(145, false, "Vegan Customers", 5, 2, 1);
 
         clients[0] = FileTextServiceIndividual.getInstance().readIndividualFromFile("files/individual.csv");
         clients[1] = FileTextServiceGroup.getInstance().readGroupFromFile("files/group.csv");
@@ -89,7 +89,8 @@ public class Service {
     public int howManyRewardsClaimed() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         int no = 0;
@@ -104,7 +105,8 @@ public class Service {
     public int howManyFreeEvents() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         int number = 0;
@@ -118,7 +120,8 @@ public class Service {
     public boolean isThereAnyEventAtLaCosta() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         for(int i = 0; i < locations.length; i++) {
@@ -131,7 +134,8 @@ public class Service {
     public int howManyAgenciesWork() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         int no = 0;
@@ -146,7 +150,8 @@ public class Service {
     public boolean doesAnyEventAcceptOnlineBooking() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         for(int i = 0; i < locations.length; i++) {
@@ -159,7 +164,8 @@ public class Service {
     public String latestEventFinish() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         int index = 0;
@@ -175,7 +181,8 @@ public class Service {
     public int totalPricePaid() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         int total = 0;
@@ -188,7 +195,8 @@ public class Service {
     public int howManyBookingsWithFriendsInvited() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         int no = 0;
@@ -202,7 +210,8 @@ public class Service {
     public void printClientsSortedBySumPaid() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         for(Client client: clientsList) {
@@ -213,7 +222,8 @@ public class Service {
     public void printEventsSortedByStartDate() {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).
-                append(",").append(new Timestamp(System.currentTimeMillis()));
+                append(",").append(new Timestamp(System.currentTimeMillis())).append(",")
+                .append(Thread.currentThread().getName());
         FileTextServiceTimesApel.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/times.csv");
         for(Event event: eventVector) {

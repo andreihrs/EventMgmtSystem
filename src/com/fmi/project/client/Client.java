@@ -4,37 +4,17 @@ package com.fmi.project.client;
 
 public abstract class Client implements Comparable<Client> {
 
-    protected boolean hasRegistered;
-    protected boolean hasArrived;
     protected int pricePaid;
     protected boolean firstTimeCustomer;
     protected String EmailListSubscription;
 
-    public Client(boolean hasRegistered, boolean hasArrived, int pricePaid, boolean firstTimeCustomer, String emailListSubscription) {
-        this.hasRegistered = hasRegistered;
-        this.hasArrived = hasArrived;
+    public Client(int pricePaid, boolean firstTimeCustomer, String emailListSubscription) {
         this.pricePaid = pricePaid;
         this.firstTimeCustomer = firstTimeCustomer;
         EmailListSubscription = emailListSubscription;
     }
 
     public Client() {
-    }
-
-    public boolean isHasRegistered() {
-        return hasRegistered;
-    }
-
-    public void setHasRegistered(boolean hasRegistered) {
-        this.hasRegistered = hasRegistered;
-    }
-
-    public boolean isHasArrived() {
-        return hasArrived;
-    }
-
-    public void setHasArrived(boolean hasArrived) {
-        this.hasArrived = hasArrived;
     }
 
     public int getPricePaid() {
