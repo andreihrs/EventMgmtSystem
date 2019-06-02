@@ -337,7 +337,7 @@ public class UIService {
         DELETEAgencyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Integer id = Integer.parseInt(textFieldId.getText());
+                Integer id = Integer.parseInt(textFieldPricePaid.getText());
                 if (id >= 0) {
                     try {
                         ServiceAgencyDB.getInstance().deleteAgencyBDByid(id);
@@ -360,7 +360,7 @@ public class UIService {
         UPDATEAgencyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Integer id = Integer.parseInt(textFieldId.getText());
+                Integer id = Integer.parseInt(textFieldPricePaid.getText());
 
                if (id >= 0) {
                     try {

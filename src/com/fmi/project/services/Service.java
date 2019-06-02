@@ -387,7 +387,7 @@ public class Service {
 
         List<Location> locationsWhichAreFull = new ArrayList<>();
 
-        for (int i = 0; i < events.length; i++)
+        for (int i = 0; i < locations.length; i++)
             if (locations[i].isFull())
                 locationsWhichAreFull.add(locations[i]);
         return locationsWhichAreFull;
