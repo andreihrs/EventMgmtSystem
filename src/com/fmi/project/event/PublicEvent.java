@@ -1,37 +1,23 @@
 package com.fmi.project.event;
 
-import com.fmi.project.location.Location;
+import com.fmi.project.client.Client;
 
 import java.util.Date;
 
 public class PublicEvent extends Event {
 
-    private String createdBy;
     private String specialGuest;
-    private String specialOffer;
 
-    public PublicEvent(Location location, Date startEvent, Date endEvent, boolean isFree, String eventName, String createdBy, String specialGuest, String specialOffer) {
-        super(location, startEvent, endEvent, isFree, eventName);
-        this.createdBy = createdBy;
+    public PublicEvent(Client client, Date startEvent, String eventName, boolean isFree, String specialGuest) {
+        super(client, startEvent, eventName, isFree);
         this.specialGuest = specialGuest;
-        this.specialOffer = specialOffer;
     }
 
-    public PublicEvent(String createdBy, String specialGuest, String specialOffer) {
-        this.createdBy = createdBy;
+    public PublicEvent(String specialGuest) {
         this.specialGuest = specialGuest;
-        this.specialOffer = specialOffer;
     }
 
     public PublicEvent() {
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
     }
 
     public String getSpecialGuest() {
@@ -42,11 +28,4 @@ public class PublicEvent extends Event {
         this.specialGuest = specialGuest;
     }
 
-    public String getSpecialOffer() {
-        return specialOffer;
-    }
-
-    public void setSpecialOffer(String specialOffer) {
-        this.specialOffer = specialOffer;
-    }
 }

@@ -43,9 +43,8 @@ public class FileTextServiceIndividual {
 
             String line = lineNumberReader.readLine();
             String[] values = line.split(",");
-            individual = new Individual(Boolean.parseBoolean(values[0]), Boolean.parseBoolean(values[1]),
-                    Integer.parseInt(values[2]), Boolean.parseBoolean(values[3]), values[4], Integer.parseInt(values[5]),
-                    Integer.parseInt(values[6]), Integer.parseInt(values[7]));
+            individual = new Individual(Integer.parseInt(values[0]), Boolean.parseBoolean(values[1]), values[2],
+                    Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]));
             lineNumberReader.close();
 
         } catch (FileNotFoundException e) {

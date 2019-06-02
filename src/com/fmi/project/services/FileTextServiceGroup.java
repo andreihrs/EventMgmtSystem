@@ -43,9 +43,8 @@ public class FileTextServiceGroup {
 
             String line = lineNumberReader.readLine();
             String[] values = line.split(",");
-            group = new Group(Boolean.parseBoolean(values[0]), Boolean.parseBoolean(values[1]),
-                    Integer.parseInt(values[2]), Boolean.parseBoolean(values[3]), values[4], Integer.parseInt(values[5]),
-                    Boolean.parseBoolean(values[6]), Boolean.parseBoolean(values[7]));
+            group = new Group(Integer.parseInt(values[0]), Boolean.parseBoolean(values[1]), values[2],
+                    Integer.parseInt(values[3]), Boolean.parseBoolean(values[4]));
             lineNumberReader.close();
 
         } catch (FileNotFoundException e) {

@@ -48,6 +48,18 @@ public class ServiceAgencyDB extends  ConnectionDB{
         }
     }
 
+    public void insertAgencyDB(Integer pr, boolean ftc, String el, Integer nob, String cn) throws IOException {
+
+        try {
+            Statement statement = ServiceAgencyDB.getInstance().getConnection().createStatement();
+            statement.execute("insert into agency(price_paid, first_time_customer, email_list_subscription, " +
+                                "no_of_bookings, company_name)" +
+                                "values ("+pr+", '"+ftc+"', '"+el+"', '"+nob+"', '"+cn+"')");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void readAgencyBD() throws SQLException {
         ResultSet resultSet = ServiceAgencyDB.getInstance().getStatement()
                 .executeQuery(" select * from agency");
@@ -66,10 +78,10 @@ public class ServiceAgencyDB extends  ConnectionDB{
         }
     }
 
-    public void updateAgencyBDById() throws IOException {
+    public void updateAgencyBDById(Integer id) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Id = ?");
-        String id = br.readLine();
+//        System.out.println("Id = ?");
+//        String id = br.readLine();
         System.out.println("INSERT price paid : ");
         String price = br.readLine();
         System.out.println("INSERT if first time customer : ");
@@ -85,7 +97,7 @@ public class ServiceAgencyDB extends  ConnectionDB{
         Integer first, fourth;
         String third, fifth;
 
-        id1 = Integer.parseInt(id);
+       // id1 = Integer.parseInt(id);
         first = Integer.parseInt(price);
         third = el;
         second = Boolean.parseBoolean(fc);
@@ -94,7 +106,7 @@ public class ServiceAgencyDB extends  ConnectionDB{
 
         String sql = "update agency set price_paid = ?, first_time_customer = ?, email_list_subscription = ?," +
                 "no_of_bookings = ?, company_name = ?" +
-                " where id="+id1;
+                " where id="+id;
         try {
             PreparedStatement pst = ServiceAgencyDB.getInstance().getConnection().prepareStatement(sql);
             // parameter index marcheaza datele aflate dupa set
@@ -110,17 +122,17 @@ public class ServiceAgencyDB extends  ConnectionDB{
             e.printStackTrace();
         }
     }
-    public void deleteAgencyBDByid() throws IOException {
+    public void deleteAgencyBDByid(Integer id) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("DELETE agency client with id = ");
-        String id = br.readLine();
-        Integer id2 = Integer.parseInt(id);
+//        String id = br.readLine();
+//        Integer id2 = Integer.parseInt(id);
 
         String sql = "delete from agency where id=?";
         try {
             PreparedStatement pst = ServiceAgencyDB.getInstance().getConnection().prepareStatement(sql);
 
-            pst.setInt(1, id2);
+            pst.setInt(1, id);
             pst.executeUpdate();
 
         } catch (SQLException e) {

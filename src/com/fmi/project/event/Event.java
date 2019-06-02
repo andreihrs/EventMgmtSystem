@@ -1,33 +1,31 @@
 package com.fmi.project.event;
-import com.fmi.project.location.*;
+import com.fmi.project.client.*;
 
 import java.util.Date;
 
 public abstract class Event implements Comparable<Event>{
 
-    protected Location location;
+    protected Client client;
     protected Date startEvent;
-    protected Date endEvent;
-    protected boolean isFree;
     protected String eventName;
+    protected boolean isFree;
 
-    public Event(Location location, Date startEvent, Date endEvent, boolean isFree, String eventName) {
-        this.location = location;
+    public Event(Client client, Date startEvent, String eventName, boolean isFree) {
+        this.client = client;
         this.startEvent = startEvent;
-        this.endEvent = endEvent;
-        this.isFree = isFree;
         this.eventName = eventName;
+        this.isFree = isFree;
     }
 
     public Event() {
     }
 
-    public Location getLocation() {
-        return location;
+    public Client getClient() {
+        return client;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public Date getStartEvent() {
@@ -38,22 +36,6 @@ public abstract class Event implements Comparable<Event>{
         this.startEvent = startEvent;
     }
 
-    public Date getEndEvent() {
-        return endEvent;
-    }
-
-    public void setEndEvent(Date endEvent) {
-        this.endEvent = endEvent;
-    }
-
-    public boolean isFree() {
-        return isFree;
-    }
-
-    public void setFree(boolean free) {
-        isFree = free;
-    }
-
     public String getEventName() {
         return eventName;
     }
@@ -61,6 +43,10 @@ public abstract class Event implements Comparable<Event>{
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
+
+    public boolean isFree() {return isFree;}
+
+    public void setFree(boolean isFree) { this.isFree = isFree; }
 
     @Override
     public int compareTo(Event ev) {

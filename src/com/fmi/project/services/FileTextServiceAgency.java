@@ -45,13 +45,12 @@ public class FileTextServiceAgency {
             String[] values = line.split(",");
             int nr = 0;
             try {
-                nr = Integer.parseInt(values[2].trim());
+                nr = Integer.parseInt(values[0].trim());
             } catch (NumberFormatException exc) {
                 exc.printStackTrace();
             }
-            agency = new Agency(Boolean.parseBoolean(values[0]), Boolean.parseBoolean(values[1]),
-                    nr, Boolean.parseBoolean(values[3]), values[4], Integer.parseInt(values[5]),
-                    Boolean.parseBoolean(values[6]), Integer.parseInt(values[7]), values[8]);
+            agency = new Agency(nr, Boolean.parseBoolean(values[1]), values[2],
+                    Integer.parseInt(values[3]), values[4]);
             lineNumberReader.close();
 
         } catch (FileNotFoundException e) {
